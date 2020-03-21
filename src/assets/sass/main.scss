@@ -1,0 +1,159 @@
+@import "node_modules/bootstrap/scss/_functions";
+@import "_variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap");
+
+$font-sizes: (8, 10, 12, 16, 14, 18, 20, 24, 32, 36) !default;
+@each $fontSize in $font-sizes {
+  .font-#{$fontSize} {
+    font-size: #{$fontSize}px !important;
+  }
+}
+
+$position: (left, right, center);
+@each $value in $position {
+  .text-#{$value} {
+    text-align: #{$value} !important;
+  }
+}
+
+.d-flex {
+  display: flex !important;
+}
+.d-inline {
+  display: inline !important;
+}
+.d-block {
+  display: block !important;
+}
+
+$direction: (row, row-reverse, column, column-reverse);
+@each $value in $direction {
+  .flex-#{$value} {
+    flex-direction: #{$value} !important;
+  }
+}
+
+$justify: (flex-start, flex-end, center, space-between, space-around);
+@each $value in $justify {
+  .justify-#{$value} {
+    justify-content: #{$value} !important;
+  }
+}
+
+$align: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
+@each $value in $align {
+  .align-#{$value} {
+    align-items: #{$value} !important;
+  }
+}
+
+$positions: (static, relative, absolute);
+@each $value in $positions {
+  .position-#{$value} {
+    position: #{$value} !important;
+  }
+}
+
+$widths: (25, 50, 75, 100);
+@each $value in $widths {
+  .w-#{$value} {
+    width: #{$value}% !important;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.left-50 {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.flex-center {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.txt-break-all {
+  word-break: break-all !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.App-logo {
+  height: auto;
+  pointer-events: none;
+}
+
+.sidebar {
+  width: 25vw;
+  border-right: dotted 1px blueviolet;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.photome .wrap {
+  perspective: 500px;
+  perspective-origin: 50% 50%;
+  .cube {
+    transform-style: preserve-3d;
+    width: 150px;
+    height: 150px;
+    margin: 100px auto 0px;
+    position: relative;
+    img {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      opacity: 0.8;
+    }
+    img:nth-child(1) {
+      transform: rotateY(0deg) translateZ(75px);
+    }
+    img:nth-child(2) {
+      transform: rotateY(90deg) translateZ(75px);
+    }
+    img:nth-child(3) {
+      transform: rotateY(180deg) translateZ(75px);
+    }
+    img:nth-child(4) {
+      transform: rotateY(270deg) translateZ(75px);
+    }
+    img:nth-child(5) {
+      transform: rotateX(90deg) translateZ(75px);
+    }
+    img:nth-child(6) {
+      transform: rotateX(270deg) translateZ(75px);
+    }
+  }
+}
+
+@keyframes loop {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+.cube {
+  animation: loop 7s infinite linear;
+}
